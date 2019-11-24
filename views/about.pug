@@ -1,0 +1,20 @@
+extends ./layout/main
+
+block title 
+    | About
+
+block main
+    div.mb-3
+        h3.mb-0 About page
+        a.text-uppercase(href='./') home
+
+    table.table.table-striped.table-sm
+        thead 
+            tr
+                th id
+                th name
+        tbody
+        for note in data
+            tr
+                td= note.id
+                td= note.name
