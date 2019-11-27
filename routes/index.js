@@ -28,8 +28,12 @@ module.exports = function (app) {
     
 
 
-    app.get("/", function(request, response){    
-        response.render("index");
+    app.get("/", function(request, response){  
+        function random() {
+            return Math.floor(Math.random() * 100);
+        }
+        
+        response.render("index", {random: [random(), random()]});
         log(`url: ${chalk.green(request.url)}`)
     });
 
